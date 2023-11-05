@@ -12,7 +12,7 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
-    Route::get('register/passwordd7sf47s54fds75f4ds74fds75gd4s75gsd3g75d3g7sd', [RegisteredUserController::class, 'create']);
+    Route::get('register/reg7sf47si54fds75f4ds74fssds75gd4s75gsterd3g75d3g7sd', [RegisteredUserController::class, 'create']);
     Route::get('register', function () {
         return redirect('/');
     });
