@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\ContentControl\Content;
+use App\Http\Controllers\Homepage;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,23 +18,26 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/', [Homepage::class, 'index'])->name("/");
+Route::get('/uploads/{image}', [Homepage::class, 'showImage']);
+Route::get('/kategori/{slug}', [Homepage::class, 'category'])->name("kategori");
+Route::get('/kategori/{category}/{slug}', [Homepage::class, 'single'])->name("content");
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/dashboard', [Content::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/dashboard/content/create', [Content::class, 'create'])
+        ->middleware(['auth', 'verified'])->name('create');
+    Route::post('/dashboard/content/create', [Content::class, 'store'])->middleware(['auth', 'verified'])->name('create');
+    Route::get('/dashboard/content/edit/{id}', [Content::class, 'edit'])->middleware(['auth', 'verified'])->name('edit');
+    Route::post('/dashboard/content/edit/{id}', [Content::class, 'update'])->middleware(['auth', 'verified'])->name('update');
+    Route::delete("/dashboard/content/delete/{id}", [Content::class, 'destroy'])->middleware(['auth', 'verified'])->name('delete');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
