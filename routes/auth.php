@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('guest')->group(function () {
     Route::get('register/password{$2a$10$Mz9J3kJR1Pq49j3Ns8TxxOsZMVQWx9HHCo2IoVg00Ff1jh029Ifs6', [RegisteredUserController::class, 'create'])
         ->name('register');
-
+    Route::get('register', function () {
+        return redirect('/');
+    });
     Route::post('register', [RegisteredUserController::class, 'store']);
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
