@@ -4,15 +4,7 @@ import { InstagramIcon, MailIcon, TwitterIcon } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 export default function Footer() {
-  console.log(window.innerWidth);
   const footerRef = useRef<HTMLDivElement>(null);
-  // useEffect(() => {
-  //   if (footerRef.current) {
-  //     footerRef.current.addEventListener("resize", (e) => {
-  //       console.log(window.innerWidth);
-  //     });
-  //   }
-  // }, []);
 
   return (
     <>

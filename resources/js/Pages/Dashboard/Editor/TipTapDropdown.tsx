@@ -20,13 +20,9 @@ export default function TipTapDropdown() {
   }
 
   const addImage = (inputFileUpload: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(inputFileUpload.currentTarget.files);
     if (inputFileUpload.currentTarget.files) {
-      console.log(inputFileUpload.currentTarget?.files[0]);
-
       const file = inputFileUpload.currentTarget?.files[0];
       if (file) {
-        console.log(file);
         const reader = new FileReader();
 
         reader.onload = (e) => {

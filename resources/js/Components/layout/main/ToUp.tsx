@@ -6,7 +6,6 @@ const handleTopScroll = () => {
 
 export const ToUp = () => {
   const [isVisible, setIsVisible] = useState(false);
-  console.log(isVisible);
 
   const handleScroll = () => {
     if (window.scrollY > 100) {

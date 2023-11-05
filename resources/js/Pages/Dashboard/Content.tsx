@@ -169,7 +169,6 @@ const CreateContent = ({ auth, data }: PageProps) => {
   useEffect(() => {
     const watchForm = form.watch();
     setData(watchForm);
-    console.log(watchForm);
   }, [form.watch()]);
 
   return (

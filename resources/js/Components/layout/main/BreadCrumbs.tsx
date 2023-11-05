@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 export const BreadCrumb = () => {
   const page = usePage();
   const [breadCrumb] = useState(page.url.split("/"));
-  console.log(page);
-
   return (
     <>
       <p className=" flex text-xl font-extrabold pt-5 ">

@@ -7,7 +7,6 @@ import { Suspense } from "react";
 
 export default function Main() {
   const { props } = usePage<PageProps>();
-  console.log(props.data);
 
   return (
     <GuestLayout>

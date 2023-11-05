@@ -24,8 +24,6 @@ const humanizeTime = (date: string) => {
 };
 
 export default function Dashboard({ auth, data }: PageProps) {
-  console.log(data);
-
   return (
     <AuthenticatedLayout
       user={auth!.user}
