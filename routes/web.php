@@ -23,9 +23,6 @@ Route::get('/', [Homepage::class, 'index'])->name("/");
 Route::get('/uploads/{image}', [Homepage::class, 'showImage']);
 Route::get('/kategori/{slug}', [Homepage::class, 'category'])->name("kategori");
 Route::get('/kategori/{category}/{slug}', [Homepage::class, 'single'])->name("content");
-Route::get('/symlink', function () {
-    Artisan::call('storage:link');
-});
 
 
 
