@@ -17,13 +17,13 @@ export default function Footer() {
           <p className="text-3xl font-lobster">Beyinlik.net</p>
         </div>
         <div className="flex gap-5">
-          <Link
+          <a
             href="https://www.instagram.com/e.beyinlik"
             className="flex flex-col items-center gap-2"
           >
             <InstagramIcon size={36} /> <span className="text-lg">Insta</span>
-          </Link>
-          <Link
+          </a>
+          <a
             href="https://twitter.com/eBeyinlik"
             className="flex flex-col items-center gap-2"
           >
@@ -38,7 +38,7 @@ export default function Footer() {
               </g>
             </svg>{" "}
             <span className="text-lg mt-1">Twitter(X)</span>
-          </Link>
+          </a>
           <a
             href="mailto:iletisim@beyinlik.com"
             className="flex flex-col items-center gap-2"
