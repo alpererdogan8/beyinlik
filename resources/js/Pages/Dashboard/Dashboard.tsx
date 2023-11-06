@@ -108,6 +108,9 @@ export default function Dashboard({ auth, data }: PageProps) {
                               href={route("delete", {
                                 id: item.id.toString(),
                               })}
+                              onBefore={() =>
+                                confirm("Are you sure you want to delete it?")
+                              }
                               as="button"
                             >
                               Sil
