@@ -186,7 +186,7 @@ const CreateContent = ({ auth, data }: PageProps) => {
         </h2>
       }
     >
-      <Head title="Dashboard" />
+      <Head title="Create Content" />
 
       <div className="py-0 sm:py-6 lg:py-12 ">
         <div className="max-w-5xl mx-auto sm:px-6 lg:px-8">

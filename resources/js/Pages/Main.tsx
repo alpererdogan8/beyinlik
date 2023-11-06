@@ -2,7 +2,7 @@ import { CardGroup } from "@/Components/layout/main/CardGroup";
 import { Pagination } from "@/Components/layout/main/Pagination";
 import GuestLayout from "@/Layouts/Layout";
 import { PageProps } from "@/types";
-import { usePage } from "@inertiajs/react";
+import { Head, usePage } from "@inertiajs/react";
 import { Suspense } from "react";
 
 export default function Main() {
@@ -10,6 +10,7 @@ export default function Main() {
 
   return (
     <GuestLayout>
+      <Head title="Anasayfa" />
       <Suspense fallback={<>loading...</>}>
         <CardGroup data={props?.data as any} />
       </Suspense>
