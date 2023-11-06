@@ -1,0 +1,1 @@
+import{r as o,j as r}from"./app-cf488f2c.js";import{z as s}from"./index-6ef748b6.js";function i({field:e}){const{editor:t}=s();return o.useEffect(()=>{e.onChange(t.getHTML())},[t.getHTML()]),r.jsx(r.Fragment,{})}export{i as default};
