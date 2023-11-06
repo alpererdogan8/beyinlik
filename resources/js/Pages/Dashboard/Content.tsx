@@ -169,7 +169,13 @@ const CreateContent = ({ auth, data }: PageProps) => {
   useEffect(() => {
     const watchForm = form.watch();
     setData(watchForm);
-  }, [form.watch()]);
+  }, [
+    form.watch().author,
+    form.watch().category,
+    form.watch().content,
+    form.watch().image,
+    form.watch().title,
+  ]);
 
   return (
     <AuthenticatedLayout
